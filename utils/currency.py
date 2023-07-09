@@ -3,7 +3,6 @@ from requests.structures import CaseInsensitiveDict
 import os
 import logging
 import time
-import pandas
 
 # url = "https://api.freecurrencyapi.com/v1/latest?currencies=EUR"
 
@@ -31,7 +30,7 @@ class Currency:
         self.sample_period = int(sample_period)
         self.sample_time = int(sample_time) * 60
         self.headers = CaseInsensitiveDict()
-        self.headers["apikey"] = os.environ.get("API_TOKEN")   #"jCapRYOERxQ8W0AyfRwph8yEK8v1YkLq4m3yd4W5"
+        self.headers["apikey"] = "jCapRYOERxQ8W0AyfRwph8yEK8v1YkLq4m3yd4W5"  #TODO: using env as: os.environ.get("API_TOKEN")
         self.currency_values=[] ## An empty list to stored sampled currency values 
 
     def get_json_data(self):
